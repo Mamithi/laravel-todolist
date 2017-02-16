@@ -87,7 +87,6 @@
 					@endforeach
 				</tbody>
 			</table>
-			<p class="id">5 uncomlpeted tasks</p>
 
 		@endif
 
