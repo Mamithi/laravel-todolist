@@ -67,9 +67,11 @@
     <body>
        <div class="container">
            <div class="content">
+
+           <a class="btn btn-info btn-block" href="auth/facebook" role="button">Login With Facebook</a>
                <div class="title">Laravel 5</div>
 
-               <a class="btn-btn-info" href="auth/facebook" role="button">Login With Facebook</a>
+               
            </div>
        </div>
     </body>
