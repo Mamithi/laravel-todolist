@@ -65,23 +65,12 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+       <div class="container">
+           <div class="content">
+               <div class="title">Laravel 5</div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-            </div>
-        </div>
+               <a class="btn-btn-info" href="auth/facebook" role="button">Login With Facebook</a>
+           </div>
+       </div>
     </body>
 </html>
