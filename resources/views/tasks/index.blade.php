@@ -86,7 +86,16 @@
 							</td>
 						</tr>
 						
+						
 					@endforeach
+
+					{{-- {{ $taskNumber = 0 }}
+					@for($i = 0; $i < count($storedTasks); $i++)
+						@if(($storedTask->completed)==1)
+							{{ $taskNumber += 1}}		
+						@endif
+					@endfor
+					<p> {{$taskNumber}} Completed </p> --}}
 				</tbody>
 			</table>
 
