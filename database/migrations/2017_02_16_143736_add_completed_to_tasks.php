@@ -14,7 +14,7 @@ class AddCompletedToTasks extends Migration
     public function up()
     {
         Schema::table('tasks', function($table){
-         $table->boolean('completed')->default(1)->after('name');
+         $table->boolean('completed')->default(0)->after('name');
          });
     }
 

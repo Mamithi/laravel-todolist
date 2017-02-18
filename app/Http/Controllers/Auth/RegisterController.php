@@ -117,4 +117,93 @@ class RegisterController extends Controller
             return redirect('/tasks');
         
     }
+
+
+    //Twitter
+
+    public function redirectToProviderTwitter()
+    {
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallbackTwitter()
+    {
+        try {
+             $socialUser = Socialite::driver('twitter')->user();
+        } catch (\Exception $e) {
+            return redirect('/');
+        }
+       
+       //Check if we have logged provider
+        $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+        if(!$socialProvider){
+            //Create a new user and provdier
+            $user = User::firstOrCreate(
+                ['email' => $socialUser->getEmail()],
+                ['name' => $socialUser->getName()]
+                );
+
+            $user->socialProviders()->create(
+                ['provider_id' => $socialUser->getId(), 'provider' => 'twitter']
+                );
+        } else
+            $user = $socialProvider->user;
+
+            auth()->login($user);
+
+            return redirect('/tasks');
+        
+    }
+
+    //Twitter
+
+
+    //Google
+
+    public function redirectToProviderGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallbackGoogle()
+    {
+        try {
+             $socialUser = Socialite::driver('google')->user();
+        } catch (\Exception $e) {
+            return redirect('/');
+        }
+       
+       //Check if we have logged provider
+        $socialProvider = SocialProvider::where('provider_id', $socialUser->getId())->first();
+        if(!$socialProvider){
+            //Create a new user and provdier
+            $user = User::firstOrCreate(
+                ['email' => $socialUser->getEmail()],
+                ['name' => $socialUser->getName()]
+                );
+
+            $user->socialProviders()->create(
+                ['provider_id' => $socialUser->getId(), 'provider' => 'google']
+                );
+        } else
+            $user = $socialProvider->user;
+
+            auth()->login($user);
+
+            return redirect('/tasks');
+        
+    }
+
+    //
+
 }

@@ -27,3 +27,11 @@ Route::get('/home', 'HomeController@index');
 Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCallback');
 
+
+Route::get('auth/twitter', 'Auth\RegisterController@redirectToProviderTwitter');
+Route::get('auth/twitter/callback', 'Auth\RegisterController@handleProviderCallbackTwitter');
+
+
+Route::get('auth/google', 'Auth\RegisterController@redirectToProviderGoogle');
+Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallbackGoogle');
+

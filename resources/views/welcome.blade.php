@@ -80,7 +80,22 @@
             <hr>
                 <div class="col-md-8 col-md-offset-2">
                    <a class="btn btn-primary btn-block" href="auth/facebook">Login With Facebook</a>
+                    <hr>
                 </div>
+               
+
+                <div class="col-md-8 col-md-offset-2">
+                   <a class="btn btn-info btn-block" href="auth/twitter">Login With Twitter</a>
+                     <hr>
+                </div>
+              
+
+                <div class="col-md-8 col-md-offset-2">
+                   <a class="btn btn-danger btn-block" href="auth/google">Login With Google+</a>
+                   <hr>
+                </div>
+                
+
                <div class="title">Laravel 5</div>
            </div>
            </div>

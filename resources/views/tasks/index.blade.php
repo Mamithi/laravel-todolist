@@ -71,7 +71,7 @@
 							{{-- {{  Form::open() }} --}}
 							<form method="post" action="task">
 							{{ csrf_field() }}
-								<input type="checkbox" onClick="this.form.submit()"  {{ $storedTask->done ? 'checked' : '' }}/>
+								<input type="checkbox" onClick="this.form.submit()"  {{ $storedTask->completed ? '' : 'checked' }}/>
 								<input type="hidden" name="id"  value="{{ $storedTask->id}}">
 							{{-- {{ Form::close()}} --}}
 							</form>
